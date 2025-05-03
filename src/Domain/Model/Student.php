@@ -2,17 +2,15 @@
 
 namespace Alura\Pdo\Domain\Model;
 
+use DateTimeInterface;
+
 class Student
 {
-    private ?int $id;
-    private string $name;
-    private \DateTimeInterface $birthDate;
-
-    public function __construct(?int $id, string $name, \DateTimeInterface $birthDate)
-    {
-        $this->id = $id;
-        $this->name = $name;
-        $this->birthDate = $birthDate;
+    public function __construct(
+        private ?int $id,
+        private string $name,
+        private DateTimeInterface $birthDate
+    ) {
     }
 
     public function id(): ?int
